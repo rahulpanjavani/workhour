@@ -1,0 +1,137 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+		xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+		x:Class="workour.LoginPage"
+		BackgroundColor="{StaticResource ThemeBackgroundColorColor}"
+		xmlns:local="clr-namespace:workour;assembly=workour"
+		>
+	
+	<ContentPage.Padding>
+		<OnPlatform x:TypeArguments="Thickness" iOS="15,20,15,15" Android="15,15" />
+	</ContentPage.Padding>
+
+	<ContentPage.Resources>
+		<ResourceDictionary>
+		<x:Double x:Key="labelfontSize">15</x:Double>
+			<x:Double x:Key="buttonfontSize">18</x:Double>
+						
+			<Style x:Key="labelStyle" TargetType="Label">
+				<Setter Property="FontSize" Value="30" />
+			</Style>
+			<!--<Style x:Key="labelFont" TargetType="Label">
+				<Setter Property="FontFamily" Value="Vinci Serif" />
+			</Style>-->
+		</ResourceDictionary>
+	</ContentPage.Resources>
+	
+	
+	<ContentPage.Content>
+		<Grid  Padding="0,0,0,0" RowSpacing="0" x:Name="GridMainView">
+			<Grid.RowDefinitions>
+				<RowDefinition Height="150"/>
+				<RowDefinition Height="Auto"/>
+				<RowDefinition Height="Auto"/>
+				<RowDefinition Height="Auto"/>
+				<RowDefinition Height="Auto"/>
+				<RowDefinition Height="Auto"/> 
+
+			</Grid.RowDefinitions>
+			<AbsoluteLayout Grid.Row="0" >
+				 <Image x:Name="imgLogo" Source="finalGlow.png"  AbsoluteLayout.LayoutBounds="0,0.5,1,1" AbsoluteLayout.LayoutFlags="All"  Aspect="AspectFit">
+				</Image>
+				<!--FontFamily="SourceSansPro-Semibold"
+-->				<Label Style="{StaticResource sansBold}" FontSize="{StaticResource labelfontSize}" AbsoluteLayout.LayoutBounds="0.5,.9" AbsoluteLayout.LayoutFlags="XProportional,YProportional" HeightRequest="20"   XAlign="Center" TextColor="#FFF"  Text="Enter your email and your password." >
+				</Label>
+				
+			</AbsoluteLayout>
+
+
+			<Grid Grid.Row="1"  RowSpacing="0" Padding="0,13,0,5" >
+				<Grid.RowDefinitions>
+					<RowDefinition Height="40" />
+					<RowDefinition Height="Auto" />
+					</Grid.RowDefinitions>
+
+				<Frame OutlineColor="White" Padding=".9" Grid.Row="0" BackgroundColor="White" HasShadow="false">
+			<local:MyEntry FontFamily="SourceSansPro-Semibold" x:Name="entryEmail" Keyboard="Email"  HeightRequest="40" TextChanged="Email_change"  Placeholder="  email" BackgroundColor="White">
+			<local:MyEntry.Behaviors>
+						<local:ValidateEmailBehavior />
+					</local:MyEntry.Behaviors>
+
+						<local:MyEntry.HeightRequest>
+				<OnPlatform x:TypeArguments="x:Double" iOS="40" Android="50" />
+			</local:MyEntry.HeightRequest>
+						
+				</local:MyEntry>
+				</Frame>
+					
+			<Label FontSize="{StaticResource labelfontSize}" Style="{StaticResource sansSemibold}" x:Name="lblEmail" Grid.Row="1" IsVisible="false" Text="Incorrect Email" TextColor="Red" >
+			<Label.FontFamily>
+			<OnPlatform x:TypeArguments="x:String">
+		            <OnPlatform.iOS>SourceSansPro-Semibold</OnPlatform.iOS>
+
+		        </OnPlatform>
+		        </Label.FontFamily>
+				</Label>
+			</Grid>
+
+			<Grid Grid.Row="2" Padding="0,1,0,20" RowSpacing="0" >
+					<Grid.RowDefinitions>
+					<RowDefinition Height="Auto" />
+					<RowDefinition Height="Auto" />
+					</Grid.RowDefinitions>
+			    <Frame OutlineColor="White" Padding=".9" BackgroundColor="White" Grid.Row="0"  HasShadow="false" HeightRequest="40">
+				<local:MyEntry FontFamily="SourceSansPro-Semibold" x:Name="entryPwd" IsPassword="true" TextChanged="Password_change"  HeightRequest="40"  Placeholder="  password" BackgroundColor="White">
+				<local:MyEntry.HeightRequest>
+				<OnPlatform x:TypeArguments="x:Double" iOS="40" Android="50" />
+			</local:MyEntry.HeightRequest>
+						
+					</local:MyEntry>
+					</Frame>
+				<Label FontSize="{StaticResource labelfontSize}" Style="{StaticResource sansSemibold}" x:Name="lblPwd" Grid.Row="1" IsVisible="false" Text="Incorrect Password" TextColor="Red"  >
+				<Label.FontFamily>
+					<OnPlatform x:TypeArguments="x:String">
+		            <OnPlatform.iOS>SourceSansPro-Semibold</OnPlatform.iOS>
+
+		        </OnPlatform>
+		        </Label.FontFamily>
+				</Label>
+
+				</Grid>
+				
+				<StackLayout Grid.Row="3" Orientation="Horizontal" Spacing="10" Padding="0,5,0,20">
+				<local:CheckBox  x:Name="checkBox" Source="checkbox.png" HeightRequest="15" WidthRequest="15"></local:CheckBox>
+				<Label FontSize="{StaticResource labelfontSize}" Text="I accept the Terms Of Service" TextColor="#FFF">
+				<Label.FontFamily>
+					<OnPlatform x:TypeArguments="x:String">
+		            <OnPlatform.iOS>SourceSansPro-Semibold</OnPlatform.iOS>
+
+		        </OnPlatform>
+						</Label.FontFamily>
+					</Label>
+			     </StackLayout>
+
+			<local:MyButton Grid.Row="4" x:Name="connectionButton"  Clicked="btnLoginClicked" FontSize="{StaticResource buttonfontSize}" FontAttributes="Bold" BorderRadius="2" BorderWidth="0" BorderColor="Transparent" BackgroundColor="#638dc6" HeightRequest="40"  Text="Log In" TextColor="#FFF" >
+			<local:MyButton.HeightRequest>
+				<OnPlatform x:TypeArguments="x:Double" iOS="40" Android="50" />
+			</local:MyButton.HeightRequest>
+			</local:MyButton>
+
+			<StackLayout Grid.Row="5" Padding="0,50,0,0">
+			<Label FontSize="{StaticResource labelfontSize}"   Text="Forgot Password?" XAlign="Center" TextColor="#FFF" >
+			<Label.FontFamily>
+					<OnPlatform x:TypeArguments="x:String">
+		            <OnPlatform.iOS>SourceSansPro-Semibold</OnPlatform.iOS>
+		          
+		        </OnPlatform>
+		        </Label.FontFamily>
+				</Label>
+				
+				  <Label.GestureRecognizers>
+            <TapGestureRecognizer  Tapped="OnHomeTapped"></TapGestureRecognizer>
+          </Label.GestureRecognizers>
+
+			</StackLayout>
+		</Grid>
+	</ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,147 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+		     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+		     x:Class="workour.ConfirmationCodePage"
+		      BackgroundColor="{StaticResource ThemeBackgroundColorColor}"
+		xmlns:local="clr-namespace:workour;assembly=workour"
+		>
+		<ContentPage.Padding>
+		<OnPlatform x:TypeArguments="Thickness" iOS="15,22,15,15" Android="15,15" />
+	</ContentPage.Padding>
+
+	<ContentPage.Resources>
+		<ResourceDictionary>
+		<x:Double x:Key="labelfontSize">15</x:Double>
+			<x:Double x:Key="buttonfontSize">18</x:Double>
+						
+			<Style x:Key="labelStyle" TargetType="Label">
+				<Setter Property="FontSize" Value="30" />
+			</Style>
+			<Style x:Key="labelFont" TargetType="Label">
+				<Setter Property="FontFamily" Value="Vinci Serif" />
+			</Style>
+		</ResourceDictionary>
+	</ContentPage.Resources>
+	
+	<ContentPage.Content>
+		<!--<Grid Padding="0,10,0,0">
+		<Grid.RowDefinitions>
+		<RowDefinition Height="30"></RowDefinition>
+		<RowDefinition Height="80"></RowDefinition>
+		<RowDefinition Height="Auto"></RowDefinition>
+		<RowDefinition Height="Auto"></RowDefinition>
+		<RowDefinition Height="Auto"></RowDefinition>
+		<RowDefinition Height="Auto"></RowDefinition>
+		</Grid.RowDefinitions>
+
+			<Grid Grid.Row="0" ColumnSpacing="0" Margin="0,0,20,0" Padding="0,0,0,0">
+				<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="Auto"/>
+			    <ColumnDefinition Width="Auto"/>
+				</Grid.ColumnDefinitions>
+					<Image Grid.Column="0" HeightRequest="13" WidthRequest="13" Source="lessthan.png" />
+				<Label Grid.Column="1" YAlign="Center" BackgroundColor="Transparent" Text="Back" TextColor="White" FontSize="15" />
+				 <Grid.GestureRecognizers>
+            <TapGestureRecognizer  Tapped="OnBackTapped"></TapGestureRecognizer>
+          </Grid.GestureRecognizers>
+			</Grid>
+			
+			<StackLayout  Margin="10,0,0,0" Grid.Row="1" Padding="30,10,30,0">
+			<Image Source="finalGlow.png" HeightRequest="40" Aspect="AspectFill">
+				</Image>
+			</StackLayout>
+			
+			<Label FontSize="17" Grid.Row="2" FontAttributes="Bold" HorizontalOptions="Center" VerticalOptions="Center" Text="Enter Confirmation Code" FontFamily="Bold" TextColor="White"></Label>
+	<StackLayout Grid.Row="3" Padding="0,10,0,10">
+	<Label FontSize="13" FontAttributes="Bold" Grid.Row="2" HorizontalOptions="Center" VerticalOptions="Center" XAlign="Center" Text="Enter the confirmation code sent to you via email or text message:" TextColor="White"></Label>
+		</StackLayout>
+	<Grid Grid.Row="4" RowSpacing="0" Padding="0,0,0,0">
+				<Grid.RowDefinitions>
+					<RowDefinition Height="40" />
+					<RowDefinition Height="Auto" />
+					</Grid.RowDefinitions>
+				
+			<local:MyEntry x:Name="entryConfirmcode" Keyboard="Text" Grid.Row="0" HeightRequest="40" TextChanged="Code_change" FontAttributes="Bold" Placeholder="  confirmation code" BackgroundColor="White">
+
+				</local:MyEntry>
+
+			<Label x:Name="lblConfirmcode" Grid.Row="1" IsVisible="false" Text="Incorrect Code" TextColor="Red" FontSize="15" FontAttributes="Bold"/>
+			</Grid>
+			<StackLayout Grid.Row="5" Padding="0,10,0,0">
+			<local:MyButton x:Name="btnCompleteLogin" Clicked="CompleteLoginClicked" FontSize="18" FontAttributes="Bold" BorderRadius="0" BorderWidth="0" BorderColor="Transparent" BackgroundColor="#638dc6" HeightRequest="40" Text="Complete Log In" TextColor="#FFF" >
+			<local:MyButton.HeightRequest>
+				<OnPlatform x:TypeArguments="x:Double" iOS="40" Android="50" />
+			</local:MyButton.HeightRequest>
+			</local:MyButton>
+				</StackLayout>
+
+		</Grid>-->
+
+		<Grid  Padding="0,0,0,20" RowSpacing="0">
+			<Grid.RowDefinitions>
+				<RowDefinition Height="145"/>
+				<RowDefinition Height="Auto"/>
+				<RowDefinition Height="Auto"/>
+				<RowDefinition Height="Auto"/>
+				<RowDefinition Height="Auto"/>
+				<RowDefinition Height="Auto"/> 
+
+			</Grid.RowDefinitions>
+			<AbsoluteLayout Grid.Row="0" >
+				<!--<StackLayout x:Name="stkBackView" Padding="0,3,0,0" Orientation="Horizontal" AbsoluteLayout.LayoutBounds="0,0" AbsoluteLayout.LayoutFlags="XProportional,YProportional">
+					<Image Source="backarrowwhite.png" HeightRequest="15" WidthRequest="10"/>
+					<Label Text="Back" FontAttributes="Bold" FontFamily="HelveticaNeue-Regular" FontSize="15" TextColor="#FFF" />										
+										
+				</StackLayout>	-->
+				
+				<Image Source="finalGlow.png"  AbsoluteLayout.LayoutBounds="0,0.5,1,1" AbsoluteLayout.LayoutFlags="All"  Aspect="AspectFit">
+				</Image>
+				<Label Text="Enter Confirmation Code" FontAttributes="Bold" Style="{StaticResource sansBold}" FontSize="18" AbsoluteLayout.LayoutBounds="0.5,.88" AbsoluteLayout.LayoutFlags="XProportional,YProportional" HeightRequest="20"   XAlign="Center" TextColor="#FFF"  >
+				</Label>
+				
+			</AbsoluteLayout>
+
+			<AbsoluteLayout Grid.Row="0">
+			<StackLayout  x:Name="stkBackView" Padding="0,3,0,0" Orientation="Horizontal" AbsoluteLayout.LayoutBounds="0,0" AbsoluteLayout.LayoutFlags="XProportional,YProportional" >
+					<Image Source="backarrowwhite.png" HeightRequest="15" WidthRequest="10"/>
+					<Label Text="Back" FontAttributes="Bold" Style="{StaticResource HelveticaNeueregular}" FontSize="15" TextColor="#FFF" />										
+
+					<StackLayout.GestureRecognizers>
+            <TapGestureRecognizer  Tapped="OnBackTapped"></TapGestureRecognizer>
+          </StackLayout.GestureRecognizers>
+					
+		    </StackLayout>
+				
+			</AbsoluteLayout>
+
+				<Label Grid.Row="1" Text="Enter the confirmation code sent to you via email or text message:" XAlign="Center" FontSize="15" TextColor="#FFF" FontAttributes="Bold"  Style="{StaticResource sansSemibold}" />
+			
+				
+		<Grid Grid.Row="2" RowSpacing="0" Padding="0,10,0,0">
+				<Grid.RowDefinitions>
+					<RowDefinition Height="40" />
+					<RowDefinition Height="Auto" />
+					</Grid.RowDefinitions>
+				
+			<Frame OutlineColor="White" Padding=".9" BackgroundColor="White" Grid.Row="0"  HasShadow="false" HeightRequest="40">
+
+				<local:MyEntry x:Name="entryConfirmcode" Keyboard="Text" FontSize="15"  HeightRequest="40" TextChanged="Code_change" FontAttributes="Bold" Placeholder="  confirmation code" BackgroundColor="White">
+
+				</local:MyEntry>
+					</Frame>
+
+			<Label x:Name="lblConfirmcode" Grid.Row="1" IsVisible="false" Text="Incorrect Code" TextColor="Red" FontSize="15" FontAttributes="Bold"/>
+			</Grid>
+			<StackLayout Grid.Row="5" Padding="0,10,0,0">
+			<local:MyButton x:Name="btnCompleteLogin" FontFamily="SourceSansPro-Bold" Clicked="CompleteLoginClicked" FontSize="18" FontAttributes="Bold" BorderRadius="2" BorderWidth="0" BorderColor="Transparent" BackgroundColor="#638dc6" HeightRequest="40" Text="Complete Log In" TextColor="#FFF" >
+			<local:MyButton.HeightRequest>
+				<OnPlatform x:TypeArguments="x:Double" iOS="40" Android="50" />
+			</local:MyButton.HeightRequest>
+			</local:MyButton>
+				</StackLayout>
+			
+		
+		</Grid>
+	</ContentPage.Content>
+</ContentPage>
+

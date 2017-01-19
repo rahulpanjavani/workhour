@@ -1,0 +1,128 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+		     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+		     x:Class="workour.sendConformationScreen"
+		     BackgroundColor="{StaticResource ThemeBackgroundColorColor}"
+		xmlns:local="clr-namespace:workour;assembly=workour"
+		>
+
+	<ContentPage.Padding>
+		<OnPlatform x:TypeArguments="Thickness" iOS="15,22,15,15" Android="15,15" />
+	</ContentPage.Padding>
+
+	<ContentPage.Resources>
+		<ResourceDictionary>
+		<x:Double x:Key="labelfontSize">15</x:Double>
+			<x:Double x:Key="buttonfontSize">18</x:Double>
+						
+			<Style x:Key="labelStyle" TargetType="Label">
+				<Setter Property="FontSize" Value="30" />
+			</Style>
+			<Style x:Key="labelFont" TargetType="Label">
+				<Setter Property="FontFamily" Value="Vinci Serif" />
+			</Style>
+		</ResourceDictionary>
+	</ContentPage.Resources>
+	
+	<ContentPage.Content>
+		<!--<Grid RowSpacing="15" Padding="0,30,0,0">
+			<Grid.RowDefinitions>
+				<RowDefinition Height="80"/>
+				<RowDefinition Height="Auto"/>
+				<RowDefinition Height="Auto"/>
+				<RowDefinition Height="Auto"/>
+				<RowDefinition Height="Auto"/>
+				<RowDefinition Height="Auto"/>
+				<RowDefinition Height="Auto"/>
+
+			</Grid.RowDefinitions>
+
+			<StackLayout Grid.Row="0" Padding="30,10,30,30" >
+				<Image Source="finalGlow.png" HeightRequest="40" Aspect="AspectFill">
+
+				</Image>
+			</StackLayout>
+
+			<Label FontFamily="SourceSansPro-Bold" HeightRequest="20" FontSize="15"  XAlign="Center" TextColor="#FFF" Grid.Row="1" Text="Confirmation Code" />
+
+			<Label FontFamily="SourceSansPro-Semibold" FontSize="13"  XAlign="Center" TextColor="#FFF" Grid.Row="2" Text="In order to complete log in, we need to send you a confirmation code." />
+
+            <Label Grid.Row="3" FontSize="13" XAlign="Center" TextColor="#FFF"  Text="Select below to tell us how you want to receive your code.Once you receive your code, plug into the field below to enter." />
+
+			<StackLayout Grid.Row="4" Padding="30,20,30,0">
+			<local:MyButton FontFamily="SourceSansPro-Semibold" x:Name="btnSendcodeemail" Clicked="SendcodeemailClicked" FontSize="15"  BorderRadius="0" BorderWidth="0" BorderColor="Transparent" BackgroundColor="#34539b" HeightRequest="40"  Text="Send Code Via Email" TextColor="#FFF" >
+			<local:MyButton.HeightRequest>
+				<OnPlatform x:TypeArguments="x:Double" iOS="40" Android="50" />
+			</local:MyButton.HeightRequest>
+			</local:MyButton>
+				</StackLayout>
+
+			<StackLayout Grid.Row="5" Padding="30,5,30,20">
+			<local:MyButton FontFamily="SourceSansPro-Semibold" x:Name="btnSendcodetextmsg" Clicked="SendcodetextmsgClicked" FontSize="15"  BorderRadius="0" BorderWidth="0" BorderColor="Transparent" BackgroundColor="#34539b" HeightRequest="40"  Text="Send Code Via Text Message" TextColor="#FFF" >
+			<local:MyButton.HeightRequest>
+				<OnPlatform x:TypeArguments="x:Double" iOS="40" Android="50" />
+			</local:MyButton.HeightRequest>
+			</local:MyButton>
+		    </StackLayout>
+
+			<local:MyButton FontFamily="SourceSansPro-Bold" Grid.Row="6" x:Name="btnConfirmationcode" Clicked="ConfirmationcodeClicked" FontSize="18"  BorderRadius="0" BorderWidth="0" BorderColor="Transparent" BackgroundColor="#638dc6" HeightRequest="40"  Text="Send Confirmation Code" TextColor="#FFF" >
+			<local:MyButton.HeightRequest>
+				<OnPlatform x:TypeArguments="x:Double" iOS="40" Android="50" />
+			</local:MyButton.HeightRequest>
+			</local:MyButton>
+			
+		</Grid>-->
+
+		<Grid  Padding="0,0,0,0" RowSpacing="0">
+			<Grid.RowDefinitions>
+				<RowDefinition Height="145"/>
+				<RowDefinition Height="Auto"/>
+				<RowDefinition Height="Auto"/>
+				<RowDefinition Height="Auto"/>
+				<RowDefinition Height="Auto"/>
+				<RowDefinition Height="Auto"/> 
+
+			</Grid.RowDefinitions>
+			<AbsoluteLayout Grid.Row="0" >
+				 <Image Source="finalGlow.png"  AbsoluteLayout.LayoutBounds="0,0.5,1,1" AbsoluteLayout.LayoutFlags="All"  Aspect="AspectFit">
+				</Image>
+				<Label Text="Confirmation Code"  FontAttributes="Bold" Style="{StaticResource sansBold}" FontSize="18" AbsoluteLayout.LayoutBounds="0.5,.9" AbsoluteLayout.LayoutFlags="XProportional,YProportional" HeightRequest="20"   XAlign="Center" TextColor="#FFF"   >
+				</Label>
+				
+			</AbsoluteLayout>
+
+			<StackLayout Grid.Row="1" Padding="0,0,0,15" >
+			<Label Style="{StaticResource sansSemibold}" FontSize="15"  XAlign="Center" TextColor="#FFF"  Text="In order to complete log in, we need to send you a confirmation code." />
+			</StackLayout>
+
+				
+			<StackLayout Grid.Row="2" Padding="13,0,13,0">
+            <Label  FontSize="15" XAlign="Start" Style="{StaticResource sansSemibold}" TextColor="#FFF"  Text="Select below to tell us how you want to receive your code.Once you receive your code, plug into the field below to enter." />
+            </StackLayout>
+			
+			<StackLayout Grid.Row="3" Padding="30,20,30,15">
+			<local:MyButton FontFamily="SourceSansPro-Semibold" FontAttributes="Bold" x:Name="btnSendcodeemail" Clicked="SendcodeemailClicked" FontSize="15"  BorderRadius="2" BorderWidth="0" BorderColor="Transparent" BackgroundColor="#34539b" HeightRequest="40"  Text="Send Code Via Email" TextColor="#FFF" >
+			<local:MyButton.HeightRequest>
+				<OnPlatform x:TypeArguments="x:Double" iOS="40" Android="50" />
+			</local:MyButton.HeightRequest>
+			</local:MyButton>
+				</StackLayout>
+
+			<StackLayout Grid.Row="4" Padding="30,5,30,25">
+			<local:MyButton FontFamily="SourceSansPro-Semibold" FontAttributes="Bold" x:Name="btnSendcodetextmsg" Clicked="SendcodetextmsgClicked" FontSize="15"  BorderRadius="2" BorderWidth="0" BorderColor="Transparent" BackgroundColor="#34539b" HeightRequest="40"  Text="Send Code Via Text Message" TextColor="#FFF" >
+			<local:MyButton.HeightRequest>
+				<OnPlatform x:TypeArguments="x:Double" iOS="40" Android="50" />
+			</local:MyButton.HeightRequest>
+			</local:MyButton>
+		    </StackLayout>
+
+			<local:MyButton FontFamily="SourceSansPro-Bold" Grid.Row="5" x:Name="btnConfirmationcode" Clicked="ConfirmationcodeClicked" FontSize="18"  BorderRadius="2" BorderWidth="0" BorderColor="Transparent" BackgroundColor="#638dc6" HeightRequest="40"  Text="Send Confirmation Code" TextColor="#FFF" >
+			<local:MyButton.HeightRequest>
+				<OnPlatform x:TypeArguments="x:Double" iOS="40" Android="50" />
+			</local:MyButton.HeightRequest>
+			</local:MyButton>
+		
+		</Grid>
+		
+	</ContentPage.Content>
+</ContentPage>

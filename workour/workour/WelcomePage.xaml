@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+		xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+		x:Class="workour.WelcomePage"
+		BackgroundColor="{StaticResource ThemeBackgroundColorColor}"
+		xmlns:local="clr-namespace:workour;assembly=workour">
+	<ContentPage.Padding>
+		<OnPlatform x:TypeArguments="Thickness" iOS="15,22,15,15" Android="15,15" />
+	</ContentPage.Padding>
+
+	<ContentPage.Resources>
+		<ResourceDictionary>
+		<x:Double x:Key="labelfontSize">15</x:Double>
+			<x:Double x:Key="buttonfontSize">18</x:Double>
+						
+			<Style x:Key="labelStyle" TargetType="Label">
+				<Setter Property="FontSize" Value="30" />
+			</Style>
+			<Style x:Key="labelFont" TargetType="Label">
+				<Setter Property="FontFamily" Value="Vinci Serif" />
+			</Style>
+		</ResourceDictionary>
+	</ContentPage.Resources>
+	
+	<ContentPage.Content>
+	</ContentPage.Content>
+	<!--<Grid  Padding="0,30,0,0">
+			<Grid.RowDefinitions>
+				<RowDefinition Height="80"/>
+				<RowDefinition Height="Auto"/>
+				<RowDefinition Height="Auto"/>
+				<RowDefinition Height="Auto"/>
+			</Grid.RowDefinitions>
+			<StackLayout Grid.Row="0" Padding="30,10,30,0" >
+				<Image Source="finalGlow.png" HeightRequest="40" Aspect="AspectFill">
+
+				</Image>
+			</StackLayout>
+			<StackLayout Padding="0,0,0,15" Grid.Row="1">
+			<Label FontFamily="SourceSansPro-Bold" HeightRequest="20" FontSize="20" XAlign="Center" TextColor="#FFF"  Text="Welcome To WorkOur." />
+			</StackLayout>
+		<StackLayout Grid.Row="2" Padding="10,0,10,0">
+			<Label FontFamily="SourceSansPro-Semibold" FontSize="15" FontAttributes="None" XAlign="Center" TextColor="#FFF" Text="In order to groin ut cursus nisi.Morbi ut eleifend justo.Interger rutrum ,velit et pellentesque maximus ,quad velit poettitor lectus,non ullamcorper nibh nulla at metus.Vestibulum rhoncus , ante vel trirtique aliquet,magna nisi aliquam neque,eu malesuada nisi ipsum porttitor felis.Phasellus vel tellus facilisis,venenatis fells in,ultrices urna.Nulla eleifend dolor ac nisi interduo ultricies.Praesent ac ultricies tortor,nec hendrerit lorem." />
+			</StackLayout>
+			<StackLayout Padding="0,40,0,0" Grid.Row="3">
+			<local:MyButton FontFamily="SourceSansPro-Semibold" x:Name="btnConfirmationcode" Clicked="StartCliked" FontSize="18"  BorderRadius="0" BorderWidth="0" BorderColor="Transparent" BackgroundColor="#638dc6" HeightRequest="40"  Text="Let's Get Started!" TextColor="#FFF" >
+			<local:MyButton.HeightRequest>
+				<OnPlatform x:TypeArguments="x:Double" iOS="40" Android="50" />
+			</local:MyButton.HeightRequest>
+			</local:MyButton>
+			</StackLayout>
+			</Grid>-->
+
+		<Grid  Padding="0,0,0,0" RowSpacing="0">
+			<Grid.RowDefinitions>
+				<RowDefinition Height="150"/>
+				<RowDefinition Height="Auto"/>
+				<RowDefinition Height="Auto"/>
+				<RowDefinition Height="Auto"/>
+				<RowDefinition Height="Auto"/>
+				<RowDefinition Height="Auto"/> 
+
+			</Grid.RowDefinitions>
+			<AbsoluteLayout Grid.Row="0" >
+				 <Image Source="finalGlow.png"  AbsoluteLayout.LayoutBounds="0,0.5,1,1" AbsoluteLayout.LayoutFlags="All"  Aspect="AspectFit">
+				</Image>
+				<StackLayout AbsoluteLayout.LayoutBounds="0.5,.9" AbsoluteLayout.LayoutFlags="XProportional,YProportional" Padding="10,0,10,0">
+			<Label Style="{StaticResource sansBold}" HeightRequest="25" FontSize="22" XAlign="Center" TextColor="#FFF"  Text="Welcome To WorkOur." >
+				</Label>
+			</StackLayout>
+				
+			</AbsoluteLayout>
+
+			<StackLayout Grid.Row="1" Padding="10,5,10,0">
+			<Label Style="{StaticResource sansSemibold}" FontSize="15" FontAttributes="Bold" XAlign="Center" TextColor="#FFF" Text="In order to proin ut cursus nisi.Morbi ut eleifend justo.Interger rutrum ,velit et pellentesque maximus ,quad velit poettitor lectus,non ullamcorper nibh nulla at metus.Vestibulum rhoncus , ante vel trirtique aliquet,magna nisi aliquam neque,eu malesuada nisi ipsum porttitor felis.Phasellus vel tellus facilisis,venenatis fells in,ultrices urna.Nulla eleifend dolor ac nisi interduo ultricies.Praesent ac ultricies tortor,nec hendrerit lorem." />
+			</StackLayout>
+			<StackLayout Padding="0,40,0,0" Grid.Row="2">
+			<local:MyButton FontFamily="SourceSansPro-Bold" FontAttributes="Bold" x:Name="btnConfirmationcode" Clicked="StartCliked" FontSize="20"  BorderRadius="2" BorderWidth="0" BorderColor="Transparent" BackgroundColor="#638dc6" HeightRequest="40"  Text="Let's Get Started!" TextColor="#FFF" >
+			<local:MyButton.HeightRequest>
+				<OnPlatform x:TypeArguments="x:Double" iOS="40" Android="50" />
+			</local:MyButton.HeightRequest>
+			</local:MyButton>
+			</StackLayout>
+	
+		</Grid>
+	
+</ContentPage>
